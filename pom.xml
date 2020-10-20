@@ -15,7 +15,7 @@
     <modules>
         <module>customer</module>
         <module>order</module>
-        <module>product</module>
+        <module>inventory</module>
 
     </modules>
 
@@ -78,6 +78,10 @@
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
         </dependency>
     </dependencies>
 

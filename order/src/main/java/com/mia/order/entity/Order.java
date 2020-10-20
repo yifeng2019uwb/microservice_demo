@@ -7,16 +7,13 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
-import com.mia.product.entity.Product;
-import com.mia.customer.entity.Customer;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
+@Entity(name="ORDER1_TABLE")
 @Getter
 @Setter
-@Table(name="ORDER1_TABLE")
 public class Order implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -26,8 +23,9 @@ public class Order implements Serializable {
 
     private int customer_id;
 
-    //    private List<Product> itemList;
-//   private LinkedHashMap<int, int> itemList;
+//    private List<Product> itemList;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<OrderItem> items;
     private int quantity;
     private double totalPrice;
     private OrderStatus status ;
